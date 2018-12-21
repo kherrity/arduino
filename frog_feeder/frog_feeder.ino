@@ -15,12 +15,12 @@ void servo_tilt(int degrees) {
 }
 
 // Feed Mr. Know-It-All every 24 hours
-unsigned long interval = 24UL * 60UL * 60UL * 1000UL;
+const unsigned long interval = 24UL * 60UL * 60UL * 1000UL;
 
 void loop() {
   servo_tilt(105);
   delay(500);
   servo_tilt(0);
-  unsigned long startMillis = millis();
-  while (millis() - startMillis < interval);
+  unsigned long start = millis();
+  while (millis() - start < interval);
 }
